@@ -1,7 +1,9 @@
 /* flash messages */
-.alert {
-  color: red;
-}
-.notice {
-  color: green;
+.flash {
+  .alert {
+    color: red;
+  }
+  .notice {
+    color: green;
+  }
 }

@@ -8,17 +8,17 @@
 </head>
 <body>
   <header>
-    <%= content_tag(:span, "signed in as #{current_user.email}") if current_user %>
+    <%= content_tag(:span, "Signed in as #{current_user.email}") if current_user %>
     <%= link_to "Sign Up", new_user_registration_path unless current_user %>
     <%= link_to "Sign In", new_user_session_path unless current_user %>
     <%= link_to "Sign Out", destroy_user_session_path, method: :delete if current_user %>
   </header>
   <div class="flash">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%= content_tag(:p, notice, class: 'notice') if notice %>
+    <%= content_tag(:p, alert, class: 'alert') if alert %>
   </div>
 
-<%= yield %>
+  <%= yield %>
 
   <footer></footer>
 </body>
